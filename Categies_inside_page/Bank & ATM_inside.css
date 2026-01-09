@@ -1,16 +1,16 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial}
 body{background:#f0fdf4;color:#064e3b}
-
 .container{max-width:1400px;margin:40px auto;padding:0 20px}
-h1{font-size:34px;margin-bottom:6px}
-.subtitle{color:#047857;margin-bottom:36px}
+
+h1{font-size:34px}
+.subtitle{color:#047857;margin:6px 0 34px}
 
 /* CATEGORY */
-.categories{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:38px}
+.categories{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
 .category-btn{
-background:#fff;border:2px solid #86efac;padding:14px 24px;border-radius:30px;
-cursor:pointer;display:flex;align-items:center;gap:10px;font-weight:600;
-color:#065f46;transition:.3s}
+background:#fff;border:2px solid #86efac;padding:12px 22px;
+border-radius:30px;cursor:pointer;font-weight:600;
+display:flex;align-items:center;gap:8px;color:#065f46}
 .category-btn i{color:#10b981}
 .category-btn.active,.category-btn:hover{
 background:#10b981;color:#fff;border-color:#10b981}
@@ -20,33 +20,36 @@ background:#10b981;color:#fff;border-color:#10b981}
 .shop-list{
 display:grid;
 grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-gap:30px}
+gap:28px}
 
 /* CARD */
 .shop-card{
-background:#fff;border-radius:22px;overflow:hidden;
+background:#fff;border-radius:22px;
 box-shadow:0 20px 40px rgba(16,185,129,.18);
-transition:.35s;position:relative}
-.shop-card:hover{transform:translateY(-8px)}
+transition:.3s;overflow:hidden;position:relative}
+.shop-card:hover{transform:translateY(-7px)}
 
 .shop-img{
-height:180px;background:linear-gradient(135deg,#10b981,#34d399);
+height:150px;
+background:linear-gradient(135deg,#10b981,#34d399);
 display:flex;align-items:center;justify-content:center;
-color:#fff;font-size:22px;font-weight:800}
+color:#fff;font-size:22px;font-weight:700}
 
 .badge{
-position:absolute;top:14px;right:14px;background:#fff;
-color:#10b981;font-size:12px;padding:6px 14px;border-radius:20px;font-weight:700}
+position:absolute;top:14px;right:14px;
+background:#fff;color:#10b981;
+padding:6px 14px;border-radius:20px;
+font-size:12px;font-weight:700}
 
 .shop-body{padding:18px}
-.shop-body h3{font-size:21px;margin-bottom:6px}
+.shop-body h3{font-size:20px;margin-bottom:6px}
 .rating{font-size:14px;color:#059669;margin-bottom:6px}
 .address{font-size:14px;color:#065f46;margin-bottom:8px}
 .services{font-size:13px;color:#047857;margin-bottom:14px}
 
-.actions{display:flex;gap:12px}
+.actions{display:flex;gap:10px}
 .btn{
-flex:1;padding:11px;border-radius:12px;
+flex:1;padding:10px;border-radius:12px;
 border:1px solid #bbf7d0;background:#ecfdf5;
 cursor:pointer;font-size:14px;
 display:flex;align-items:center;justify-content:center;gap:6px}
@@ -55,12 +58,12 @@ display:flex;align-items:center;justify-content:center;gap:6px}
 /* FOOTER */
 .footer{margin-top:70px;background:#064e3b;color:#fff}
 
-/* FEATURE FOOTER */
 .footer-features{
 background:#022c22;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:24px;padding:30px 20px;max-width:1400px;margin:auto}
+
 .feature-box{display:flex;gap:14px}
 .feature-box i{font-size:22px;color:#34d399}
 .feature-box h5{color:#d1fae5;font-size:15px}
@@ -70,18 +73,18 @@ gap:24px;padding:30px 20px;max-width:1400px;margin:auto}
 max-width:1400px;margin:auto;padding:44px 20px;
 display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:32px}
-.footer h3,.footer h4{color:#bbf7d0;margin-bottom:14px}
+
+.footer h3,.footer h4{color:#d1fae5;margin-bottom:14px}
 .footer p,.footer li{font-size:14px;color:#ecfdf5;line-height:1.6}
 .footer ul{list-style:none}
-.footer ul li{margin-bottom:8px}
+.footer li{margin-bottom:8px}
 
 .footer-bottom{
-background:#022c22;text-align:center;padding:14px;
-font-size:13px;color:#bbf7d0}
+background:#022c22;
+text-align:center;padding:14px;font-size:13px;color:#a7f3d0}
 
 @media(max-width:600px){
 h1,.subtitle{text-align:center}
 .categories{justify-content:center}
-.footer-container,.footer-features{text-align:center}
-.feature-box{justify-content:center}
+.footer-container{text-align:center}
 }
