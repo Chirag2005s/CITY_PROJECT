@@ -1,498 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Restaurants | Categories & All Restaurants</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="Restaurent.css">
+<meta charset="UTF-8">
+<title>Restaurants | Categories</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="Restaurent.css">
 </head>
+
 <body>
 
+<div class="back-bar">
+  <button class="back-btn" onclick="history.back()">
+    <i class="fa fa-arrow-left"></i> Back
+  </button>
+</div>
+
 <div class="container">
-  <h1>Restaurant Categories</h1>
+<h1>Restaurant Categories</h1>
 
-  <!-- CATEGORY BUTTONS -->
-  <div class="categories">
-    <button class="category-btn active"><i class="fa-solid fa-layer-group"></i>All</button>
-    <button class="category-btn"><i class="fa-solid fa-leaf"></i>Pure Veg</button>
-    <button class="category-btn"><i class="fa-solid fa-drumstick-bite"></i>Non Veg</button>
-    <button class="category-btn"><i class="fa-solid fa-burger"></i>Fast Food</button>
-    <button class="category-btn"><i class="fa-solid fa-mug-hot"></i>Café</button>
-    <button class="category-btn"><i class="fa-solid fa-utensils"></i>Family Dining</button>
+<div class="categories">
+  <button class="category-btn active"><i class="fa fa-layer-group"></i>All</button>
+  <button class="category-btn"><i class="fa fa-leaf"></i>Veg</button>
+  <button class="category-btn"><i class="fa fa-burger"></i>Fast Food</button>
+  <button class="category-btn"><i class="fa fa-mug-hot"></i>Café</button>
+</div>
+
+<div class="restaurant-list">
+
+<!-- CARD TEMPLATE USED FOR ALL DATA -->
+
+<!-- 1 -->
+<div class="restaurant-card">
+  <div class="restaurant-img">
+    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+    <div class="badge">Open Now</div>
+    <div class="save"><i class="fa fa-heart"></i></div>
   </div>
-
-  <!-- ALL RESTAURANTS -->
-  <div class="restaurant-list">
-
-    <div class="restaurant-card">
-      <div class="tag">Popular</div>
-      <div class="restaurant-img">Restaurant Image</div>
-      <div class="restaurant-body">
-        <h3>Shree Marwadi Bhojanalaya</h3>
-        <div class="rating">⭐ 4.6 (520)</div>
-        <div class="type">Pure Veg • Rajasthani</div>
-        <div class="address">Main Market, Sirohi</div>
-        <div class="actions">
-          <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-          <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-        </div>
-      </div>
+  <div class="restaurant-body">
+    <h3>Kheda Rooftop Restaurant</h3>
+    <div class="rating">⭐ 4.5</div>
+    <div class="meta"><span>Restaurant</span><span>₹₹</span></div>
+    <div class="address">Bus Stop, Housing Board Colony, Sirohi</div>
+    <div class="actions">
+      <button class="btn call"><i class="fa fa-phone"></i> Call</button>
+      <a href="https://wa.me/919999999999" class="btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     </div>
-
-    <div class="restaurant-card">
-      <div class="tag">Family</div>
-      <div class="restaurant-img">Restaurant Image</div>
-      <div class="restaurant-body">
-        <h3>Hotel Sunset Restaurant</h3>
-        <div class="rating">⭐ 4.4 (410)</div>
-        <div class="type">Multi-Cuisine</div>
-        <div class="address">Abu Road, Sirohi</div>
-        <div class="actions">
-          <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-          <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="restaurant-card">
-      <div class="tag">Fast Food</div>
-      <div class="restaurant-img">Restaurant Image</div>
-      <div class="restaurant-body">
-        <h3>Food Junction</h3>
-        <div class="rating">⭐ 4.5 (360)</div>
-        <div class="type">Fast Food • Snacks</div>
-        <div class="address">Sadar Bazaar, Sirohi</div>
-        <div class="actions">
-          <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-          <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="restaurant-card">
-      <div class="tag">Café</div>
-      <div class="restaurant-img">Restaurant Image</div>
-      <div class="restaurant-body">
-        <h3>Café Chaska</h3>
-        <div class="rating">⭐ 4.3 (290)</div>
-        <div class="type">Café • Beverages</div>
-        <div class="address">Mandwa Road, Sirohi</div>
-        <div class="actions">
-          <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-          <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="restaurant-card">
-        <div class="tag">Café</div>
-        <div class="restaurant-img">Restaurant Image</div>
-        <div class="restaurant-body">
-          <h3>Café Chaska</h3>
-          <div class="rating">⭐ 4.3 (290)</div>
-          <div class="type">Café • Beverages</div>
-          <div class="address">Mandwa Road, Sirohi</div>
-          <div class="actions">
-            <button class="btn call"><i class="fa-solid fa-phone"></i>Call</button>
-            <button class="btn"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-          </div>
-        </div>
-      </div>
-
   </div>
 </div>
 
+<!-- 2 -->
+<div class="restaurant-card">
+  <div class="restaurant-img">
+    <img src="https://images.unsplash.com/photo-1541542684-4a9c44c5c63f">
+    <div class="badge">Open Now</div>
+    <div class="save"><i class="fa fa-heart"></i></div>
+  </div>
+  <div class="restaurant-body">
+    <h3>Baba Ramdev Restaurant Sirohi</h3>
+    <div class="rating">⭐ 4.3</div>
+    <div class="meta"><span>Restaurant</span><span>₹₹</span></div>
+    <div class="address">NH 14, Dev Nagari Colony, Sirohi</div>
+    <div class="actions">
+      <button class="btn call">Call</button>
+      <a class="btn whatsapp" href="#">WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- Repeat same structure (only name & address change) -->
+
+<div class="restaurant-card"><div class="restaurant-img"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de"><div class="badge">Open Now</div><div class="save"><i class="fa fa-heart"></i></div></div><div class="restaurant-body"><h3>Arbuda Restaurant</h3><div class="rating">⭐ 4.2</div><div class="meta"><span>Restaurant</span><span>₹₹</span></div><div class="address">Airstrip Road, Sirohi</div><div class="actions"><button class="btn call">Call</button><a class="btn whatsapp" href="#">WhatsApp</a></div></div></div>
+
+<div class="restaurant-card"><div class="restaurant-img"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2"><div class="badge">Open Now</div><div class="save"><i class="fa fa-heart"></i></div></div><div class="restaurant-body"><h3>Ambika Restaurant And Guest House</h3><div class="rating">⭐ 4.1</div><div class="meta"><span>Hotel</span><span>₹₹</span></div><div class="address">Near Nehru Nagar, Sirohi</div><div class="actions"><button class="btn call">Call</button><a class="btn whatsapp" href="#">WhatsApp</a></div></div></div>
+
+<div class="restaurant-card"><div class="restaurant-img"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"><div class="badge">Open Now</div><div class="save"><i class="fa fa-heart"></i></div></div><div class="restaurant-body"><h3>Rangilo Rajwado Unlimited Restaurant</h3><div class="rating">⭐ 4.4</div><div class="meta"><span>Veg</span><span>₹₹₹</span></div><div class="address">Vedhaynath Colony, Sirohi</div><div class="actions"><button class="btn call">Call</button><a class="btn whatsapp" href="#">WhatsApp</a></div></div></div>
+
+<!-- Continue same pattern for remaining restaurants -->
+
+</div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-box">
+      <h3>About</h3>
+      <p>Discover best restaurants in Sirohi.</p>
+    </div>
+    <div class="footer-box">
+      <h3>Links</h3>
+      <a href="#">Home</a>
+      <a href="#">Categories</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>Sirohi, Rajasthan</p>
+      <p>+91 XXXXX XXXXX</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 SirohiConnect | All Rights Reserved
+  </div>
+</footer>
+
 </body>
 </html>
-
