@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="Interior_Design.css">
+<link rel="stylesheet" href="Interior Designer.css">
 </head>
 
 <body>
@@ -15,11 +15,9 @@
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">Sirohi<span>Connect</span></div>
-
     <div class="menu-btn" onclick="toggleMenu()">
       <i class="fa-solid fa-bars"></i>
     </div>
-
     <div class="nav-links" id="navLinks">
       <a href="#">Home</a>
       <a href="#">Categories</a>
@@ -67,9 +65,7 @@ const shops = [
 document.write(
  shops.map(shop=>`
  <div class="business-card">
-   <div class="card-img">
-     <i class="fa-solid fa-house"></i>
-   </div>
+   <div class="card-img"><i class="fa-solid fa-house"></i></div>
    <div class="card-body">
      <h3>${shop[0]}</h3>
      <p>${shop[1]}</p>
