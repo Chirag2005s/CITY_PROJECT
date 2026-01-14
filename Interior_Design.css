@@ -1,13 +1,13 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-body{background:#0f172a;color:#e5e7eb}
+body{background:#f8fafc;color:#020617}
 
 /* NAVBAR */
 .navbar{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#020617;
-  border-bottom:1px solid #1e293b;
+  background:#ffffff;
+  border-bottom:1px solid #e5e7eb;
 }
 
 .nav-container{
@@ -24,8 +24,7 @@ body{background:#0f172a;color:#e5e7eb}
   font-weight:700;
   color:#f59e0b;
 }
-
-.logo span{color:white}
+.logo span{color:#020617}
 
 .nav-links{
   display:flex;
@@ -34,34 +33,28 @@ body{background:#0f172a;color:#e5e7eb}
 
 .nav-links a{
   text-decoration:none;
-  color:#cbd5f5;
+  color:#334155;
   font-size:14px;
-  transition:.3s;
 }
-
 .nav-links a:hover{color:#f59e0b}
 
-/* MOBILE MENU */
-.menu-btn{
-  display:none;
-  font-size:22px;
-  cursor:pointer;
-}
+.menu-btn{display:none;font-size:22px;cursor:pointer}
 
 @media(max-width:768px){
   .nav-links{
     position:absolute;
     top:58px;
     right:0;
-    background:#020617;
     width:100%;
+    background:#ffffff;
     flex-direction:column;
     text-align:center;
     display:none;
+    border-top:1px solid #e5e7eb;
   }
   .nav-links a{
     padding:14px;
-    border-top:1px solid #1e293b;
+    border-bottom:1px solid #e5e7eb;
   }
   .menu-btn{display:block}
   .nav-links.active{display:flex}
@@ -69,18 +62,18 @@ body{background:#0f172a;color:#e5e7eb}
 
 /* HEADER */
 .page-header{
-  background:linear-gradient(135deg,#f59e0b,#b45309);
-  padding:40px 20px;
+  background:linear-gradient(135deg,#f59e0b,#fb923c);
+  padding:45px 20px;
   text-align:center;
+  color:#020617;
 }
-
 .page-header h1{font-size:32px}
 .page-header p{margin-top:8px;font-size:14px}
 
 /* CARD GRID */
 .card-container{
   max-width:1200px;
-  margin:40px auto;
+  margin:50px auto;
   padding:0 20px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -89,21 +82,21 @@ body{background:#0f172a;color:#e5e7eb}
 
 /* CARD */
 .business-card{
-  background:#020617;
-  border:1px solid #1e293b;
+  background:#ffffff;
+  border:1px solid #e5e7eb;
   border-radius:18px;
   overflow:hidden;
   transition:.3s;
 }
 .business-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(0,0,0,.45);
+  box-shadow:0 15px 35px rgba(0,0,0,.1);
 }
 
 /* ICON */
 .card-img{
   height:130px;
-  background:linear-gradient(135deg,#f59e0b,#b45309);
+  background:#f59e0b;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -114,7 +107,7 @@ body{background:#0f172a;color:#e5e7eb}
 /* BODY */
 .card-body{padding:20px}
 .card-body h3{font-size:16px;margin-bottom:6px}
-.card-body p{font-size:13px;color:#94a3b8;margin-bottom:12px}
+.card-body p{font-size:13px;color:#64748b;margin-bottom:12px}
 
 /* INFO */
 .card-info{
@@ -123,23 +116,25 @@ body{background:#0f172a;color:#e5e7eb}
   font-size:13px;
   margin-bottom:14px;
 }
-.rating{color:#facc15}
+.rating{color:#f59e0b}
 
 /* ACTIONS */
 .card-actions{display:flex;gap:10px}
 .btn{
   flex:1;
   padding:9px;
-  border:none;
   border-radius:10px;
-  cursor:pointer;
   font-size:14px;
+  cursor:pointer;
+  border:none;
 }
+
 .btn.call{
-  background:#020617;
-  color:#fde68a;
-  border:1px solid #334155;
+  background:#f1f5f9;
+  color:#020617;
+  border:1px solid #e5e7eb;
 }
+
 .btn.view{
   background:#f59e0b;
   color:#020617;
@@ -148,10 +143,9 @@ body{background:#0f172a;color:#e5e7eb}
 
 /* FOOTER */
 footer{
-  margin-top:50px;
-  background:#020617;
-  border-top:1px solid #1e293b;
-  padding:35px 20px;
+  background:#ffffff;
+  border-top:1px solid #e5e7eb;
+  padding:40px 20px;
 }
 
 .footer-features{
@@ -164,9 +158,10 @@ footer{
 }
 
 .feature{
-  border:1px solid #1e293b;
+  border:1px solid #e5e7eb;
   border-radius:16px;
   padding:20px;
+  background:#ffffff;
 }
 
 .feature i{
@@ -176,7 +171,7 @@ footer{
 }
 
 .feature h4{margin-bottom:6px}
-.feature p{font-size:13px;color:#94a3b8}
+.feature p{font-size:13px;color:#64748b}
 
 .copy{
   text-align:center;
