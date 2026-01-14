@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interior Design & Construction | SirohiConnect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="Interior_Design.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Sirohi<span>Connect</span></div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">Categories</a>
+      <a href="#">Businesses</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>Interior Design & Construction</h1>
+  <p>Top Interior Designers & Construction Services in Sirohi</p>
+</div>
+
+<!-- CARDS -->
+<div class="card-container">
+
+<script>
+const shops = [
+ ["SR Construction & Consultancy","Construction & Consultancy"],
+ ["Rudransh Construction Sirohi","Civil Construction"],
+ ["Sha Juharmal Phoolchand","Furniture Store"],
+ ["Singhania Group of Architecture & Planners","Construction Consultants"],
+ ["NR Construction & Consultancy","Civil & Interior Works"],
+ ["Jay Maa Bhawani Interior","Interior Design"],
+ ["Suthar","Wood & Furniture Work"],
+ ["Shree Saraswati Enterprises","Interior Materials Supplier"],
+ ["NPC Furniture","Modular Furniture"],
+ ["KRISHNA ARTS","Interior Decoration"],
+ ["Shree Balaji Multi Design Company","PVC, WPC & Interior Panels"],
+ ["NK Design & Construction","Design & Construction"],
+ ["Artrovert Interiors","Modern Interior Design"],
+ ["WOODWORK INTERIOR","Custom Wood Interiors"],
+ ["Ronak Curtain Work","Curtains & Blinds"],
+ ["Srijan Developers","Civil Engineering & Interior"],
+ ["Nippon Paint India Pvt Ltd","Paints & Wall Coatings"],
+ ["Shree Kambeshwar Designs","Architectural Design"],
+ ["HEMANSHI INTERIORS","Residential & Commercial Interiors"],
+ ["The Finest Design","Premium Interior Design"],
+ ["Sompura Arts","Traditional Art & Design"]
+];
+
+document.write(
+ shops.map(shop=>`
+ <div class="business-card">
+   <div class="card-img">
+     <i class="fa-solid fa-house"></i>
+   </div>
+   <div class="card-body">
+     <h3>${shop[0]}</h3>
+     <p>${shop[1]}</p>
+     <div class="card-info">
+       <span><i class="fa-solid fa-location-dot"></i> Sirohi</span>
+       <span class="rating">⭐ 4.6</span>
+     </div>
+     <div class="card-actions">
+       <button class="btn call">Call</button>
+       <button class="btn view">View</button>
+     </div>
+   </div>
+ </div>
+ `).join('')
+);
+</script>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-features">
+    <div class="feature">
+      <i class="fa-solid fa-building"></i>
+      <h4>Trusted Professionals</h4>
+      <p>Verified interior & construction experts</p>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-phone"></i>
+      <h4>Direct Contact</h4>
+      <p>Call businesses directly</p>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-star"></i>
+      <h4>Quality Rated</h4>
+      <p>Customer based ratings</p>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-location-dot"></i>
+      <h4>Local Services</h4>
+      <p>Find experts near you</p>
+    </div>
+  </div>
+
+  <div class="copy">
+    © 2026 SirohiConnect · Local Business Directory
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

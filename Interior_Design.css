@@ -1,0 +1,186 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#0f172a;color:#e5e7eb}
+
+/* NAVBAR */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#020617;
+  border-bottom:1px solid #1e293b;
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:700;
+  color:#f59e0b;
+}
+
+.logo span{color:white}
+
+.nav-links{
+  display:flex;
+  gap:22px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#cbd5f5;
+  font-size:14px;
+  transition:.3s;
+}
+
+.nav-links a:hover{color:#f59e0b}
+
+/* MOBILE MENU */
+.menu-btn{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .nav-links{
+    position:absolute;
+    top:58px;
+    right:0;
+    background:#020617;
+    width:100%;
+    flex-direction:column;
+    text-align:center;
+    display:none;
+  }
+  .nav-links a{
+    padding:14px;
+    border-top:1px solid #1e293b;
+  }
+  .menu-btn{display:block}
+  .nav-links.active{display:flex}
+}
+
+/* HEADER */
+.page-header{
+  background:linear-gradient(135deg,#f59e0b,#b45309);
+  padding:40px 20px;
+  text-align:center;
+}
+
+.page-header h1{font-size:32px}
+.page-header p{margin-top:8px;font-size:14px}
+
+/* CARD GRID */
+.card-container{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+/* CARD */
+.business-card{
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:18px;
+  overflow:hidden;
+  transition:.3s;
+}
+.business-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.45);
+}
+
+/* ICON */
+.card-img{
+  height:130px;
+  background:linear-gradient(135deg,#f59e0b,#b45309);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px;
+  color:white;
+}
+
+/* BODY */
+.card-body{padding:20px}
+.card-body h3{font-size:16px;margin-bottom:6px}
+.card-body p{font-size:13px;color:#94a3b8;margin-bottom:12px}
+
+/* INFO */
+.card-info{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin-bottom:14px;
+}
+.rating{color:#facc15}
+
+/* ACTIONS */
+.card-actions{display:flex;gap:10px}
+.btn{
+  flex:1;
+  padding:9px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:14px;
+}
+.btn.call{
+  background:#020617;
+  color:#fde68a;
+  border:1px solid #334155;
+}
+.btn.view{
+  background:#f59e0b;
+  color:#020617;
+  font-weight:600;
+}
+
+/* FOOTER */
+footer{
+  margin-top:50px;
+  background:#020617;
+  border-top:1px solid #1e293b;
+  padding:35px 20px;
+}
+
+.footer-features{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  text-align:center;
+}
+
+.feature{
+  border:1px solid #1e293b;
+  border-radius:16px;
+  padding:20px;
+}
+
+.feature i{
+  font-size:26px;
+  color:#f59e0b;
+  margin-bottom:10px;
+}
+
+.feature h4{margin-bottom:6px}
+.feature p{font-size:13px;color:#94a3b8}
+
+.copy{
+  text-align:center;
+  margin-top:25px;
+  font-size:13px;
+  color:#64748b;
+}
