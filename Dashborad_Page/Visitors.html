@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visitor Analytics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Visitors.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2><i class="fa fa-circle-nodes"></i><span>SirohiAdmin</span></h2>
+        <ul>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Dashborad_Page.html"><i class="fa fa-chart-line"></i><span>Overview</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Business_Requests.html"><i class="fa fa-store"></i><span>Business Requests</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Notification.html"><i class="fa fa-bell"></i><span>Notification</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/User.html#"><i class="fa fa-users"></i><span>Users</span></a></li>
+            <li><a href="#" class="active"><i class="fa fa-chart-line"></i><span>Visitors</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Category_Management.html"><i class="fa fa-layer-group"></i><span>Categories</span></a></li>
+            <li><a href="/home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Setting.html"><i class="fa fa-gear"></i><span>Setting</span></a></li>
+            <li><a href="#"><i class="fa fa-gear"></i><span>Logout</span></a></li>
+        </ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+        <div class="header-section">
+            <h1>Visitor Analytics</h1>
+            <div style="display: flex; gap: 10px;">
+                <select style="padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border); outline: none;">
+                    <option>Last 7 Days</option>
+                    <option>Last 30 Days</option>
+                    <option>Year to Date</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Real-time Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="label">Total Visits</span>
+                <span class="value" id="totalVisits">12,482</span>
+                <div class="trend up"><i class="fa fa-arrow-up"></i> 14.2% vs last week</div>
+            </div>
+            <div class="stat-card">
+                <span class="label">Current Active Users</span>
+                <span class="value" id="activeUsers" style="color: var(--success);">42</span>
+                <div class="trend up"><i class="fa fa-arrow-up"></i> Live now</div>
+            </div>
+            <div class="stat-card">
+                <span class="label">Bounce Rate</span>
+                <span class="value">32.4%</span>
+                <div class="trend down"><i class="fa fa-arrow-down"></i> 2.1%</div>
+            </div>
+            <div class="stat-card">
+                <span class="label">Avg. Session</span>
+                <span class="value">4m 12s</span>
+                <div class="trend up"><i class="fa fa-arrow-up"></i> 0m 30s</div>
+            </div>
+        </div>
+
+        <!-- Upper Layout: Log and Realtime -->
+        <div class="analytics-layout">
+            <div class="card">
+                <div class="card-title"><div><i class="fa fa-list-ul"></i> Detailed Visit Log</div></div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Visitor ID</th>
+                                <th>Location</th>
+                                <th>Device</th>
+                                <th>Page Viewed</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody id="visitLog">
+                            <tr>
+                                <td><div class="user-info"><div class="avatar-mini">G1</div><span>Guest #8821</span></div></td>
+                                <td>Sirohi, RJ</td>
+                                <td><span class="badge badge-mobile"><i class="fa fa-mobile-screen"></i> Mobile</span></td>
+                                <td>/listings/arbuda-hotel</td>
+                                <td>2m 45s</td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-info"><div class="avatar-mini" style="background: #dcfce7; color: #166534;">G2</div><span>Guest #8819</span></div></td>
+                                <td>Mount Abu, RJ</td>
+                                <td><span class="badge badge-desktop"><i class="fa fa-desktop"></i> Desktop</span></td>
+                                <td>/home</td>
+                                <td>15m 10s</td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-info"><div class="avatar-mini" style="background: #fef3c7; color: #92400e;">G3</div><span>Guest #8815</span></div></td>
+                                <td>Sheoganj, RJ</td>
+                                <td><span class="badge badge-mobile"><i class="fa fa-mobile-screen"></i> Mobile</span></td>
+                                <td>/categories/food</td>
+                                <td>45s</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <div><i class="fa fa-bolt" style="color: #f59e0b;"></i> Real-time Activity</div>
+                    <div class="live-indicator"></div>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px;">Hits per minute (Live)</p>
+                <div class="graph-container" id="realtimeGraph"></div>
+                <div class="graph-labels">
+                    <span>60m ago</span>
+                    <span>30m ago</span>
+                    <span>Now</span>
+                </div>
+                <div class="mini-feed" id="miniFeed">
+                    <p style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase;">Recent Hits</p>
+                    <div class="feed-item"><b>Guest #9012</b> viewed "Main Market"</div>
+                    <div class="feed-item"><b>Guest #9010</b> searched "Electrician"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOWER FULL WIDTH: Recent Reviews Section -->
+        <div class="full-width-section">
+            <div class="card">
+                <div class="card-title">
+                    <div><i class="fa fa-star" style="color: var(--warning);"></i> Recent User Reviews (Full Width)</div>
+                    <a href="#" style="font-size: 0.75rem; color: var(--primary); text-decoration: none; font-weight: 600;">View All Activity</a>
+                </div>
+                <div class="review-grid">
+                    <!-- Review Item 1 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="review-user">
+                                <div class="avatar-mini" style="background: #e0f2fe; color: #0369a1;">RS</div>
+                                <div>
+                                    <div class="review-user-name">Rahul Sharma</div>
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="review-date">2 hours ago</span>
+                        </div>
+                        <p class="review-content">Great service and the food at Arbuda Hotel was amazing. Highly recommend visiting if you are in Sirohi! The staff was very polite.</p>
+                        <div class="review-target"><i class="fa fa-location-dot"></i> Arbuda Hotel & Restaurant</div>
+                    </div>
+
+                    <!-- Review Item 2 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="review-user">
+                                <div class="avatar-mini" style="background: #fce7f3; color: #be185d;">AD</div>
+                                <div>
+                                    <div class="review-user-name">Anjali Dashora</div>
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa-regular fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="review-date">5 hours ago</span>
+                        </div>
+                        <p class="review-content">The listing information for the new Gym was accurate. Very helpful directory for locals looking for fitness centers.</p>
+                        <div class="review-target"><i class="fa fa-dumbbell"></i> Power Fitness Gym</div>
+                    </div>
+
+                    <!-- Review Item 3 -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="review-user">
+                                <div class="avatar-mini" style="background: #fef3c7; color: #92400e;">MK</div>
+                                <div>
+                                    <div class="review-user-name">Mahesh Kumar</div>
+                                    <div class="stars">
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-stroke"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="review-date">1 day ago</span>
+                        </div>
+                        <p class="review-content">Found a reliable plumber within 5 minutes using the search tool. Excellent utility for the city.</p>
+                        <div class="review-target"><i class="fa fa-wrench"></i> City Services Directory</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    const graphContainer = document.getElementById('realtimeGraph');
+    const barCount = 20;
+    const dataPoints = Array.from({ length: barCount }, () => Math.floor(Math.random() * 80) + 10);
+
+    function initGraph() {
+        graphContainer.innerHTML = '';
+        dataPoints.forEach(val => {
+            const bar = document.createElement('div');
+            bar.className = 'graph-bar';
+            bar.style.height = `${val}%`;
+            bar.setAttribute('data-value', val);
+            graphContainer.appendChild(bar);
+        });
+    }
+
+    function updateRealtimeData() {
+        dataPoints.shift();
+        const newValue = Math.floor(Math.random() * 90) + 5;
+        dataPoints.push(newValue);
+
+        const bars = graphContainer.querySelectorAll('.graph-bar');
+        dataPoints.forEach((val, idx) => {
+            bars[idx].style.height = `${val}%`;
+            bars[idx].setAttribute('data-value', val);
+            bars[idx].style.background = (idx === barCount - 1) ? 'var(--success)' : 'var(--primary)';
+        });
+
+        document.getElementById('activeUsers').innerText = Math.floor(Math.random() * 20) + 30;
+        let totalVisits = document.getElementById('totalVisits');
+        let currentTotal = parseInt(totalVisits.innerText.replace(',', ''));
+        totalVisits.innerText = (currentTotal + 1).toLocaleString();
+
+        if (Math.random() > 0.6) updateMiniFeed();
+    }
+
+    const feedActions = ["viewed \"Pharmacy\"", "searched \"Plumber\"", "clicked \"Call Now\"", "viewed \"Sirohi Fort\""];
+    function updateMiniFeed() {
+        const feed = document.getElementById('miniFeed');
+        const newItem = document.createElement('div');
+        newItem.className = 'feed-item';
+        newItem.innerHTML = `<b>Guest #${Math.floor(Math.random() * 1000) + 9000}</b> ${feedActions[Math.floor(Math.random() * feedActions.length)]}`;
+        feed.insertBefore(newItem, feed.children[1]);
+        if (feed.children.length > 5) feed.removeChild(feed.lastChild);
+    }
+
+    initGraph();
+    setInterval(updateRealtimeData, 3000);
+</script>
+
+</body>
+</html>

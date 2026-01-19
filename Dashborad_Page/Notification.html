@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Notification.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <aside class="sidebar">
+        <h2><i class="fa fa-circle-nodes"></i><span>SirohiAdmin</span></h2>
+        <ul>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Dashborad_Page.html"><i class="fa fa-chart-line"></i><span>Overview</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Business_Requests.html"><i class="fa fa-store"></i><span>Business Requests</span></a></li>
+            <li><a href="#" class="active"><i class="fa fa-bell"></i><span>Notification</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/User.html#"><i class="fa fa-users"></i><span>Users</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Visitors.html"><i class="fa fa-chart-line"></i><span>Visitors</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Category_Management.html"><i class="fa fa-layer-group"></i><span>Categories</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Setting.html"><i class="fa fa-gear"></i><span>Setting</span></a></li>
+            <li><a href="#"><i class="fa fa-gear"></i><span>Logout</span></a></li>
+        </ul>
+    </aside>
+
+    <main class="main">
+        <div class="header-section">
+            <div class="header-title">
+                <h1>Notifications & CRM <span class="unread-count" id="globalBadge">3</span></h1>
+            </div>
+            <button class="btn-modal secondary" onclick="markAllRead()" style="font-size: 0.75rem;"><i class="fa fa-check-double"></i> Mark all read</button>
+        </div>
+
+        <section class="notification-feed" id="notifFeed">
+            <!-- New Business Request -->
+            <div class="notification-card unread" data-id="1" onclick="viewMessage(1)">
+                <div class="notif-icon blue"><i class="fa fa-store"></i></div>
+                <div class="notif-content">
+                    <h4>New Business Approval Request</h4>
+                    <p><b>Arbuda Restaurant</b> has submitted a new listing for approval in the 'Food & Drink' category. They have provided all registration papers and GST details.</p>
+                    <div class="contact-info-strip">
+                        <div class="contact-item"><i class="fa fa-envelope"></i> contact@arbuda.in</div>
+                        <div class="contact-item"><i class="fa fa-phone"></i> +91 98290XXXXX</div>
+                    </div>
+                    <span class="notif-time"><i class="fa fa-clock"></i> 5 minutes ago</span>
+                </div>
+            </div>
+
+            <!-- Approval Success -->
+            <div class="notification-card unread" data-id="2" onclick="viewMessage(2)">
+                <div class="notif-icon green"><i class="fa fa-check-circle"></i></div>
+                <div class="notif-content">
+                    <h4>Business Approved Successfully</h4>
+                    <p>The listing for <b>Sirohi Medical Store</b> has been verified and is now live on the platform. The vendor has been notified via automated email.</p>
+                    <div class="contact-info-strip">
+                        <div class="contact-item"><i class="fa fa-envelope"></i> help@sirohimedical.com</div>
+                        <div class="contact-item"><i class="fa fa-phone"></i> +91 94142XXXXX</div>
+                    </div>
+                    <span class="notif-time"><i class="fa fa-clock"></i> 1 hour ago</span>
+                </div>
+            </div>
+
+            <!-- Rejection -->
+            <div class="notification-card unread" data-id="3" onclick="viewMessage(3)">
+                <div class="notif-icon red"><i class="fa fa-circle-xmark"></i></div>
+                <div class="notif-content">
+                    <h4>Registration Rejected</h4>
+                    <p><b>Bright Coaching Center</b> was rejected due to insufficient documentation regarding license details and missing identity proof of the owner.</p>
+                    <div class="contact-info-strip">
+                        <div class="contact-item"><i class="fa fa-envelope"></i> info@brightsirohi.org</div>
+                        <div class="contact-item"><i class="fa fa-phone"></i> +91 77370XXXXX</div>
+                    </div>
+                    <span class="notif-time"><i class="fa fa-clock"></i> Yesterday</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messaging Panel -->
+        <aside class="messaging-panel">
+            <div class="msg-header">
+                <h3 id="chatTitle"><div class="status"></div> Select a conversation</h3>
+                <div class="contact-meta" id="chatContact">Customer contact details will appear here</div>
+            </div>
+            <div class="msg-body" id="chatBody">
+                <div style="text-align: center; margin-top: 50px; color: var(--text-muted);">
+                    <i class="fa fa-comments" style="font-size: 3rem; opacity: 0.2; margin-bottom: 15px;"></i>
+                    <p style="font-size: 0.8rem;">Select a notification <br> to manage the customer.</p>
+                </div>
+            </div>
+            <div class="msg-footer">
+                <div class="quick-responses">
+                    <button class="template-btn" onclick="useTemplate('approved')">✅ Approved</button>
+                    <button class="template-btn" onclick="useTemplate('rejected')">❌ Rejected</button>
+                    <button class="template-btn" onclick="useTemplate('docs')">📄 Need Docs</button>
+                </div>
+                <div class="input-row">
+                    <input type="text" class="msg-input" placeholder="Type your reply..." id="msgInput">
+                    <button class="btn-send" onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </aside>
+    </main>
+</div>
+
+<!-- Full Message Modal -->
+<div class="modal-overlay" id="msgModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3 id="modalTitle">Message Details</h3>
+            <button onclick="closeModal()" style="border:none; background:none; cursor:pointer; font-size: 1.2rem; color: var(--text-muted);"><i class="fa fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <div id="modalMeta" style="margin-bottom: 20px; padding: 15px; background: #f8fafc; border-radius: 8px; font-size: 0.85rem;">
+                <!-- Meta info populated by JS -->
+            </div>
+            <div id="modalContent" class="full-content">
+                <!-- Content populated by JS -->
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-modal secondary" onclick="closeModal()">Close</button>
+            <button class="btn-modal primary" id="modalReplyBtn">Reply to Customer</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let unreadCount = 3;
+    const notifications = {
+        1: {
+            title: "New Business Approval Request",
+            sender: "Arbuda Restaurant",
+            email: "contact@arbuda.in",
+            phone: "+91 98290XXXXX",
+            content: "Arbuda Restaurant has submitted a new listing for approval in the 'Food & Drink' category. They have attached high-resolution images of their menu and interior, along with a valid FSSAI license. Please review the details to ensure they meet the community guidelines before publishing the listing.",
+            time: "5 minutes ago"
+        },
+        2: {
+            title: "Business Approved Successfully",
+            sender: "Sirohi Medical Store",
+            email: "help@sirohimedical.com",
+            phone: "+91 94142XXXXX",
+            content: "The listing for Sirohi Medical Store has been verified and is now live on the platform. The verification process involved checking their pharmacy license and local permit. A welcome kit has been sent to their registered email address with instructions on how to manage their business profile.",
+            time: "1 hour ago"
+        },
+        3: {
+            title: "Registration Rejected",
+            sender: "Bright Coaching Center",
+            email: "info@brightsirohi.org",
+            phone: "+91 77370XXXXX",
+            content: "Bright Coaching Center was rejected due to insufficient documentation regarding license details and missing identity proof of the owner. The applicant failed to provide a valid commercial activity permit. They have been notified that they can re-apply once they have all legal documents in order.",
+            time: "Yesterday"
+        }
+    };
+
+    function viewMessage(id) {
+        const data = notifications[id];
+        const card = document.querySelector(`.notification-card[data-id="${id}"]`);
+        
+        // Mark as read logic
+        if (card.classList.contains('unread')) {
+            card.classList.remove('unread');
+            unreadCount--;
+            updateBadge();
+        }
+
+        // Populate Modal
+        document.getElementById('modalTitle').innerText = data.title;
+        document.getElementById('modalMeta').innerHTML = `
+            <div style="margin-bottom:5px;"><strong>From:</strong> ${data.sender}</div>
+            <div style="margin-bottom:5px;"><strong>Email:</strong> ${data.email}</div>
+            <div style="margin-bottom:5px;"><strong>Phone:</strong> ${data.phone}</div>
+            <div><strong>Received:</strong> ${data.time}</div>
+        `;
+        document.getElementById('modalContent').innerText = data.content;
+        
+        // Setup Reply button in modal
+        document.getElementById('modalReplyBtn').onclick = () => {
+            closeModal();
+            openChat(data.sender, data.email, data.phone);
+        };
+
+        // Show Modal
+        document.getElementById('msgModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('msgModal').style.display = 'none';
+    }
+
+    function toggleRead(id, btn) {
+        const card = document.querySelector(`.notification-card[data-id="${id}"]`);
+        if (card.classList.contains('unread')) {
+            card.classList.remove('unread');
+            unreadCount--;
+        } else {
+            card.classList.add('unread');
+            unreadCount++;
+        }
+        updateBadge();
+    }
+
+    function markAllRead() {
+        document.querySelectorAll('.notification-card.unread').forEach(card => card.classList.remove('unread'));
+        unreadCount = 0;
+        updateBadge();
+    }
+
+    function updateBadge() {
+        const badge = document.getElementById('globalBadge');
+        badge.innerText = unreadCount;
+        badge.style.display = unreadCount > 0 ? 'inline' : 'none';
+    }
+
+    function openChat(name, email, phone) {
+        document.getElementById('chatTitle').innerHTML = `<div class="status"></div> ${name}`;
+        document.getElementById('chatContact').innerHTML = `<i class="fa fa-envelope"></i> ${email} &nbsp; | &nbsp; <i class="fa fa-phone"></i> ${phone}`;
+        
+        const chatBody = document.getElementById('chatBody');
+        chatBody.innerHTML = `
+            <div class="bubble received">
+                Hello Admin, I am representing <b>${name}</b>. I am inquiring about the status of my listing.
+            </div>
+            <div class="bubble received">
+                You can reach me at ${phone} if you need quick clarification.
+            </div>
+        `;
+        chatBody.scrollTop = chatBody.scrollHeight;
+        document.getElementById('msgInput').focus();
+    }
+
+    function useTemplate(type) {
+        const input = document.getElementById('msgInput');
+        const templates = {
+            approved: "Congratulations! Your business listing has been approved and is now live on Sirohi Connect.",
+            rejected: "We regret to inform you that your listing has been rejected. Please provide valid license documents for re-review.",
+            docs: "Please upload clear images of your shop front and a copy of your trade license to proceed."
+        };
+        input.value = templates[type];
+        input.focus();
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('msgInput');
+        const chatBody = document.getElementById('chatBody');
+        if (!input.value.trim()) return;
+
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble sent';
+        bubble.innerText = input.value;
+        chatBody.appendChild(bubble);
+        
+        input.value = '';
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        setTimeout(() => {
+            const reply = document.createElement('div');
+            reply.className = 'bubble received';
+            reply.innerText = "Understood. I'll wait for further updates. Thank you.";
+            chatBody.appendChild(reply);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }, 1500);
+    }
+
+    document.getElementById('msgInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
+</script>
+
+</body>
+</html>

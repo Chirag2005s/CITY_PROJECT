@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/blocks/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Setting.css">
+</head>
+<body data-theme="light">
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2><i class="fa fa-circle-nodes"></i><span>SirohiAdmin</span></h2>
+        <ul>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Dashborad_Page.html"><i class="fa fa-chart-line"></i><span>Overview</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Business_Requests.html"><i class="fa fa-store"></i><span>Business Requests</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Notification.html"><i class="fa fa-bell"></i><span>Notification</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/User.html#"><i class="fa fa-users"></i><span>Users</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Visitors.html"><i class="fa fa-chart-line"></i><span>Visitors</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Category_Management.html"><i class="fa fa-layer-group"></i><span>Categories</span></a></li>
+            <li><a href="#" class="active"><i class="fa fa-gear"></i><span>Setting</span></a></li>
+            <li><a href="#"><i class="fa fa-gear"></i><span>Logout</span></a></li>
+        </ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+        <header class="header-section">
+            <h1>Platform Settings</h1>
+            <div id="status-tag" style="font-size: 0.8rem; color: var(--success); font-weight: 600;">
+                <i class="fa fa-check-circle"></i> All systems operational
+            </div>
+        </header>
+
+        <section class="settings-grid">
+            
+            <!-- Appearance Management -->
+            <div class="card">
+                <h4><i class="fa fa-palette"></i> Appearance</h4>
+                <div class="form-group">
+                    <label>Interface Theme</label>
+                    <select id="themeSelector" onchange="changeTheme(this.value)">
+                        <option value="light">Light Mode</option>
+                        <option value="dark">Dark Mode</option>
+                        <option value="system">System Default</option>
+                    </select>
+                </div>
+                <div class="toggle-row">
+                    <span>High Contrast Mode</span>
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                </div>
+                <div class="toggle-row">
+                    <span>Reduce Motion</span>
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                </div>
+                <span class="info-tag">Changing the theme will apply to all admin panels instantly.</span>
+                <button class="btn-save" style="background: var(--text-muted);">Reset to Default</button>
+            </div>
+
+            <!-- Profile Settings -->
+            <div class="card">
+                <h4><i class="fa fa-user-circle"></i> Admin Profile</h4>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" value="Super Admin - Sirohi Connect">
+                </div>
+                <div class="form-group">
+                    <label>Public Bio / Title</label>
+                    <input type="text" value="Platform Management Lead">
+                </div>
+                <button class="btn-save">Update Profile</button>
+            </div>
+
+            <!-- NEW SECTION: Admin Credentials -->
+            <div class="card">
+                <h4><i class="fa fa-lock"></i> Admin Credentials</h4>
+                <div class="form-group">
+                    <label>Update Login Email</label>
+                    <input type="email" placeholder="new-admin@sirohiconnect.in">
+                </div>
+                <div class="form-group">
+                    <label>Current Password</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" placeholder="Min. 8 characters">
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="password" placeholder="Re-type new password">
+                </div>
+                <button class="btn-save">Save Credentials</button>
+            </div>
+
+            <!-- Notification Preferences -->
+            <div class="card">
+                <h4><i class="fa fa-bell"></i> Notification Rules</h4>
+                <div class="toggle-row">
+                    <span>Approval Alerts (Push)</span>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <div class="toggle-row">
+                    <span>New Listing Emails</span>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <div class="toggle-row">
+                    <span>Weekly Analytics Report</span>
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                </div>
+                <button class="btn-save" style="margin-top: 24px;">Save Preferences</button>
+            </div>
+
+            <!-- Banners & Promotion Management -->
+            <div class="card">
+                <h4><i class="fa fa-images"></i> Banners & Promotions</h4>
+                <div class="form-group">
+                    <label>Home Slider Interval (Seconds)</label>
+                    <input type="number" value="5">
+                </div>
+                <div class="toggle-row">
+                    <span>Enable Splash Screen Ad</span>
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                </div>
+                <div class="form-group">
+                    <label>Featured Section Title</label>
+                    <input type="text" value="Best of Sirohi">
+                </div>
+                <button class="btn-save">Update Promotions</button>
+            </div>
+
+            <!-- API & Integration -->
+            <div class="card">
+                <h4><i class="fa fa-code"></i> API & Cloud Control</h4>
+                <div class="form-group">
+                    <label>Google Maps API Key</label>
+                    <input type="password" value="••••••••••••••••">
+                </div>
+                <div class="toggle-row">
+                    <span>Maintenance Mode</span>
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                </div>
+                <button class="btn-save" style="background: var(--danger);">Save Critical Changes</button>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+    // Theme Management Logic
+    function changeTheme(theme) {
+        const body = document.body;
+        
+        if (theme === 'system') {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            body.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        } else {
+            body.setAttribute('data-theme', theme);
+        }
+        
+        // Save to local storage for persistence
+        localStorage.setItem('sirohi-theme', theme);
+    }
+
+    // Initialize Theme on Load
+    window.onload = () => {
+        const savedTheme = localStorage.getItem('sirohi-theme') || 'light';
+        document.getElementById('themeSelector').value = savedTheme;
+        changeTheme(savedTheme);
+    };
+
+    // Generic Button Animation
+    document.querySelectorAll('.btn-save').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const originalText = this.innerText;
+            this.innerText = 'Saving...';
+            this.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                this.innerText = 'Saved Successfully!';
+                const originalBg = this.style.background;
+                this.style.background = 'var(--success)';
+                
+                setTimeout(() => {
+                    this.innerText = originalText;
+                    this.style.background = originalBg;
+                    this.style.opacity = '1';
+                }, 2000);
+            }, 800);
+        });
+    });
+</script>
+
+</body>
+</html>

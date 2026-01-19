@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link rel="stylesheet" href="Dashborad_Login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="container">
+
+    <!-- LEFT -->
+    <div class="login-section">
+      <h1>Welcome back</h1>
+      <p>Enter your credentials to access your analytics dashboard.</p>
+
+      <div class="social-login">
+        <button class="social-btn"><i class="fa-brands fa-google"></i> Google</button>
+        <button class="social-btn"><i class="fa-brands fa-github"></i> GitHub</button>
+      </div>
+
+      <div class="divider"><span>OR CONTINUE WITH EMAIL</span></div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <div class="input-box">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" placeholder="yourexample@gmail.com">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-box">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" placeholder="••••••••••">
+          <i class="fa-solid fa-eye toggle"></i>
+        </div>
+      </div>
+
+      <div class="forgot"><a href="#">Forgot password?</a></div>
+
+      <button class="login-btn" onclick=goNext()>Sign in to Dashboard</button>
+
+      <div class="signup">
+        Don’t have an account? <a href="#">Create an account</a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="info-section">
+      <!-- <div class="logo">SirohiConnect</div> -->
+      <img src="images/SIROHI_CONNECT_LOGO (1).png" width="300">
+      <h2>Real‑time insights<br>at your fingertips.</h2>
+      <p>
+        Join 10,000+ teams who use SirohiConnect to optimize
+        their performance and local business growth.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function goNext() {
+      window.location.href = "Dashborad_Page.html";
+    }
+  </script>
+
+</body>
+</html>

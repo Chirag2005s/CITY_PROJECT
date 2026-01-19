@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sirohi Connect | Admin Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="Dashborad_Page.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <aside class="sidebar">
+        <h2><i class="fa fa-circle-nodes"></i><span>SirohiAdmin</span></h2>
+        <ul>
+            <li><a href="#" class="active"><i class="fa fa-chart-line"></i><span>Overview</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Business_Requests.html"><i class="fa fa-store"></i><span>Business Requests</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Notification.html"><i class="fa fa-bell"></i><span>Notification</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/User.html#"><i class="fa fa-users"></i><span>Users</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Visitors.html"><i class="fa fa-chart-line"></i><span>Visitors</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Category_Management.html"><i class="fa fa-layer-group"></i><span>Categories</span></a></li>
+            <li><a href="file:///home/chirag/Desktop/SIROHI_DIRECTORY_WEBSITE_FILE/Dashborad_Page/Setting.html"><i class="fa fa-gear"></i><span>Setting</span></a></li>
+            <li><a href="#"><i class="fa fa-gear"></i><span>Logout</span></a></li>
+        </ul>
+    </aside>
+
+    <main class="main">
+        <!-- Modified Header Section (Buttons Removed) -->
+        <div style="margin-bottom: 30px;">
+            <h1 style="font-size: 1.75rem; font-weight: 800;">System Overview</h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Real-time performance metrics for Sirohi Connect.</p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon stat-blue"><i class="fa fa-store"></i></div>
+                <div class="stat-info">
+                    <h3>1,240</h3>
+                    <p>Total Businesses</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-green"><i class="fa fa-layer-group"></i></div>
+                <div class="stat-info">
+                    <h3>26</h3>
+                    <p>Total Categories</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-orange"><i class="fa fa-user-clock"></i></div>
+                <div class="stat-info">
+                    <h3>48</h3>
+                    <p>Pending Approvals</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-purple"><i class="fa fa-users"></i></div>
+                <div class="stat-info">
+                    <h3>8.4k</h3>
+                    <p>App Installs</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Analytics -->
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3><i class="fa fa-chart-area"></i> Registration Growth (Last 6 Months)</h3>
+                <canvas id="growthChart" height="120"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3><i class="fa fa-chart-pie"></i> Category Share</h3>
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+
+        <div class="trend-grid">
+            <!-- Listing Health -->
+            <div class="trend-card">
+                <h3><i class="fa fa-shield-check"></i> Verification Health</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-label"><span>Hospital & Medical</span> <span>85% Verified</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-label"><span>Hotels & Restaurants</span> <span>60% Verified</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 60%; background: var(--warning);"></div></div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-label"><span>Education (School/College)</span> <span>92% Verified</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 92%; background: var(--success);"></div></div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-label"><span>Super Markets</span> <span>74% Verified</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 74%; background: var(--info);"></div></div>
+                </div>
+            </div>
+
+            <!-- Activity Log -->
+            <div class="trend-card">
+                <h3><i class="fa fa-clock-rotate-left"></i> System Activity</h3>
+                <div class="activity-item">
+                    <div class="activity-circle" style="background: var(--success);"></div>
+                    <div>
+                        <p class="activity-text"><strong>Arbuda Restaurant</strong> approved in 'Food & Drink'.</p>
+                        <p class="activity-time">Just now</p>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-circle" style="background: var(--info);"></div>
+                    <div>
+                        <p class="activity-text">New user registration from <strong>Abu Road</strong>.</p>
+                        <p class="activity-time">14 mins ago</p>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-circle" style="background: var(--warning);"></div>
+                    <div>
+                        <p class="activity-text"><strong>Mobile Shop</strong> visibility updated by Admin.</p>
+                        <p class="activity-time">2 hours ago</p>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-circle" style="background: var(--primary);"></div>
+                    <div>
+                        <p class="activity-text">System backup completed successfully.</p>
+                        <p class="activity-time">5 hours ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Listings Table -->
+        <div class="table-container">
+            <div class="table-header">
+                <h3 style="font-size: 1rem;">Top Categories by Volume</h3>
+                <a href="#" style="color: var(--primary); font-size: 0.85rem; font-weight: 600; text-decoration: none;">View All Categories</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="50">#</th>
+                        <th>Category</th>
+                        <th>Total Listings</th>
+                        <th>Monthly Growth</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="top-category-list">
+                    <!-- Javascript will inject data -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<script>
+    // Initialize Growth Chart
+    const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+    new Chart(ctxGrowth, {
+        type: 'line',
+        data: {
+            labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Business Onboarding',
+                data: [420, 580, 710, 890, 1050, 1240],
+                borderColor: '#2563eb',
+                backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 4,
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true }, x: { grid: { display: false } } }
+        }
+    });
+
+    // Initialize Category Share Chart
+    const ctxShare = document.getElementById('categoryChart').getContext('2d');
+    new Chart(ctxShare, {
+        type: 'doughnut',
+        data: {
+            labels: ['Retail', 'Food', 'Health', 'Education', 'Services'],
+            datasets: [{
+                data: [400, 250, 180, 150, 260],
+                backgroundColor: ['#2563eb', '#10b981', '#f59e0b', '#0ea5e9', '#a855f7'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            cutout: '75%',
+            plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } }
+        }
+    });
+
+    const topCategories = [
+        { name: "Restaurants", icon: "fa-utensils", count: 142, growth: "+12%" },
+        { name: "Hospitals", icon: "fa-hospital", count: 98, growth: "+5%" },
+        { name: "Super Markets", icon: "fa-cart-shopping", count: 85, growth: "+18%" },
+        { name: "Schools", icon: "fa-school", count: 42, growth: "+2%" }
+    ];
+
+    function renderTopCategories() {
+        const list = document.getElementById('top-category-list');
+        list.innerHTML = topCategories.map((cat, index) => `
+            <tr>
+                <td>${index + 1}</td>
+                <td>
+                    <div class="cat-badge">
+                        <div class="icon-box"><i class="fa ${cat.icon}"></i></div>
+                        <strong>${cat.name}</strong>
+                    </div>
+                </td>
+                <td>${cat.count}</td>
+                <td style="color: var(--success); font-weight: 600;">${cat.growth}</td>
+                <td><span class="status-badge active">Active</span></td>
+            </tr>
+        `).join('');
+    }
+
+    window.onload = renderTopCategories;
+</script>
+
+</body>
+</html>
